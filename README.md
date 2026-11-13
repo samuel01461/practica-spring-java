@@ -1,1 +1,1 @@
-Aplicacióm de búsqueda laboral en java utilizando Spring Boot, imagen docker de postgresql para la persistencia de datos, dockerización y deploy en AWS. Se usó asistencia de IA para mejorar la productividad. 
+Aplicación de búsqueda laboral en java utilizando Spring Boot, imagen docker de postgresql para la persistencia de datos, dockerización y deploy en AWS. Se usó asistencia de IA para mejorar la productividad. 
