@@ -1,7 +1,10 @@
 package com.jobflow.user;
 
+import com.jobflow.job.Job;
 import jakarta.persistence.*;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "users")
@@ -18,6 +21,9 @@ public class User {
 
     @Column(nullable = false)
     private String password;
+
+    @OneToMany(mappedBy = "recruiter")
+    private List<Job> jobs = new ArrayList<>();
 
     private LocalDateTime createdAt = LocalDateTime.now();
 
@@ -54,4 +60,5 @@ public class User {
     public LocalDateTime getCreatedAt(){
         return createdAt;
     }
+
 }

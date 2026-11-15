@@ -36,7 +36,11 @@ public class UserService {
     }
 
     public UserResponse findById(Long id) {
-        return toResponse(getUser(id));
+        User user = getUser(id);
+        if (user.getId() == null) {
+            throw new ResponseStatusException(HttpStatus.CONFLICT, "Email ya registrado");
+        }
+        return toResponse(user);
     }
     public UserResponse update(Long id, CreateUserRequest request) {
         User user = getUser(id);
@@ -51,7 +55,7 @@ public class UserService {
         return toResponse(repository.save(user));
     }
 
-    public void deletee(Long id) {
+    public void delete(Long id) {
         repository.delete(getUser(id));
     }
 
